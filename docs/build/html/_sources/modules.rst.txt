@@ -1,0 +1,8 @@
+statstests
+=======================
+
+.. toctree::
+   :maxdepth: 4
+
+   process
+   tests

@@ -1,7 +1,6 @@
 # Distribution / packaging
 venv
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
