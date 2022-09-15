@@ -12,15 +12,15 @@ The documentation for the latest release is at
 
 https://www...
 
-# Documentation
+# Main Features
 
-1. Statistical tests:
+- Statistical tests:
 
-   1. Shapiro-Francia normality test
+  - Shapiro-Francia normality test
 
-2. Linear regression models:
+- Linear regression models:
 
-   1. Process: Stepwise
+  - Process: Stepwise
 
 # Discussion and Development
 
