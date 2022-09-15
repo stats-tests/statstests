@@ -17,6 +17,7 @@ https://www...
 - Statistical tests:
 
   - Shapiro-Francia normality test
+  - Overdispersion test
 
 - Linear regression models:
 
