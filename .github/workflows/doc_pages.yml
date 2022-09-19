@@ -23,12 +23,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U sphinx
-          python -m pip install sphinx-rtd-theme
+          python -m pip install sphinx-material
           python -m pip install numpy
           python -m pip install pandas
           python -m pip install statsmodels
           python -m pip install scipy
-          # python -m pip install sphinxcontrib-apidoc
           python -m pip install sphinx-autoapi
       - name: make the sphinx docs
         run: |
