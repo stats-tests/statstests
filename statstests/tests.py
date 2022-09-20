@@ -6,15 +6,52 @@ import statsmodels.formula.api as smf
    
 def shapiro_francia(array):
 
-    """
-    The statistical test of Shapiro-Francia considers the squared correlation between the ordered sample values and the (approximated) expected ordered quantiles from the standard normal distribution. The p-value is computed from the formula given by Royston (1993).
-    This function performs the Shapiro-Francia test for the composite hypothesis of normality, according to Thode Jr. (2002).
+    r"""
 
-    References:
-    Royston, P. (1993). A pocket-calculator algorithm for the Shapiro-Francia test for non-normality: an application to medicine. Statistics in Medicine, 12, 181-184.
-    Thode Jr., H. C. (2002). Testing for Normality. Marcel Dekker, New York.   
+    The statistical test of Shapiro-Francia considers the squared 
+    correlation between the ordered sample values and the (approximated) 
+    expected ordered quantiles from the standard normal distribution. 
+
+    The p-value is computed from the formula given by Royston (1993).
+    This function performs the Shapiro-Francia test for the composite 
+    hypothesis of normality, according to Thode Jr. (2002).
+
+    Example
+
+    .. ipython:: python
+
+        import pandas as pd
+        import statsmodels.api as sm
+        from statstests.datasets import bebes
+        from statstests.tests import shapiro_francia
+
+        # import bebes dataset
+        df = bebes.get_data()
+
+        # Estimate and fit model
+        model = sm.OLS.from_formula('comprimento ~ idade', df).fit()
+
+        # Print summary
+        print(model.summary())
+
+        # Print statistics of the normality test
+        shapiro_francia(model.resid)
+
+    The statistical test of Shapiro-Francia considers the squared 
+    correlation between the ordered sample values and the (approximated) 
+    expected ordered quantiles from the standard normal distribution. 
+
+    The p-value is computed from the formula given by Royston (1993).
+    This function performs the Shapiro-Francia test for the composite 
+    hypothesis of normality, according to Thode Jr. (2002).
+
+    References
+    ----------
+    .. [1] Royston, P. (1993). A pocket-calculator algorithm for the Shapiro-Francia test for non-normality: an application to medicine. Statistics in Medicine, 12, 181-184.
+    .. [2] Thode Jr., H. C. (2002). Testing for Normality. Marcel Dekker, New York.
+
     """
-   
+
     def ppoints(n, a):
         try:
             n = float(len(n))

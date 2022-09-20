@@ -1,7 +1,7 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'statstests')))
 
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'statstests')))
 
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -18,7 +18,16 @@ release = '1.0.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
+extensions = [
+    'sphinx.ext.autodoc',
+    "sphinx.ext.autosummary", 
+    'sphinx.ext.coverage',
+    'numpydoc', 
+    'nbsphinx',
+    'IPython.sphinxext.ipython_console_highlighting',
+    'IPython.sphinxext.ipython_directive',
+]
+
 templates_path = ["_templates"]
 exclude_patterns = []
 
@@ -50,7 +59,11 @@ html_theme_options = {
     # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': 3,
     # If False, expand all TOC entries
-    'globaltoc_collapse': False,
+    'globaltoc_collapse': True,
     # If True, show hidden TOC entries
-    'globaltoc_includehidden': False,
+    'globaltoc_includehidden': True,
+}
+
+html_sidebars = {
+    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
 }
