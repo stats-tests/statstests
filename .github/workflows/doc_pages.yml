@@ -29,7 +29,7 @@ jobs:
           python -m pip install statsmodels
           python -m pip install scipy
           python -m pip install sphinx-autoapi
-          python -m pip install numpydocs
+          python -m pip install numpydoc
           python -m pip install nbsphinx
           python -m pip install ipython
       - name: make the sphinx docs
