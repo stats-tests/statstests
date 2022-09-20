@@ -6,10 +6,10 @@ This section collects various statistical techniques and tools for statsmodels's
 Regression and Linear Models
 ----------------------------
 
-.. module:: statstests.process
+.. module:: process
    :synopsis: Statistical methods and tests
 
-.. currentmodule:: statstests.process
+.. currentmodule:: process
 
 .. autosummary::
    :toctree: generated/

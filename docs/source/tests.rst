@@ -1,4 +1,4 @@
-.. currentmodule:: statstests.tests
+.. currentmodule:: tests
 
 Statistical tests
 =================
@@ -8,7 +8,7 @@ This section collects various statistical tests.
 Module Reference
 ----------------
 
-.. module:: statstests.tests
+.. module:: tests
    :synopsis: Statistical tests
 
 Normality test
