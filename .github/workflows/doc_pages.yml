@@ -27,6 +27,7 @@ jobs:
           python -m pip install numpy
           python -m pip install pandas
           python -m pip install statsmodels
+          python -m pip install statstests
           python -m pip install scipy
           python -m pip install sphinx-autoapi
           python -m pip install numpydoc
