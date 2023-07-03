@@ -10,7 +10,7 @@ statstests is a Python package that provides a complement of process and statist
 
 The documentation for the latest release is at
 
-https://www...
+https://stats-tests.github.io/statstests/
 
 # Main Features
 
