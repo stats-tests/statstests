@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>tests.vuong_test &#8212; statstests 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="tests.overdisp" href="tests.overdisp.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=deep-purple data-md-color-accent=deep-orange>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#generated/tests.vuong_test" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="statstests 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Statstests</span>
+          <span class="md-header-nav__topic"> tests.vuong_test </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://stats-tests.github.io/statstests/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    statstests
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">statstests 1.0.0 documentation</a></li>
+          <li class="md-tabs__item"><a href="../modules.html" class="md-tabs__link">User Guide</a></li>
+          <li class="md-tabs__item"><a href="../tests.html" class="md-tabs__link">Statistical tests</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="statstests 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="statstests 1.0.0 documentation">Statstests</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://stats-tests.github.io/statstests/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    statstests
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../install.html" class="md-nav__link">Installing statstests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../modules.html" class="md-nav__link">User Guide</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../process.html" class="md-nav__link">Statistical techniques</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tests.html" class="md-nav__link">Statistical tests</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../tests.html#module-tests" class="md-nav__link">Module Reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tests.html#regression-models-with-count-data" class="md-nav__link">Regression Models with Count Data</a>
+      
+    
+    </li></ul>
+    
+    </li></ul>
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/generated/tests.vuong_test.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="tests-vuong-test">
+<h1 id="generated-tests-vuong-test--page-root">tests.vuong_test<a class="headerlink" href="#generated-tests-vuong-test--page-root" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.vuong_test">
+<span class="sig-prename descclassname"><span class="pre">tests.</span></span><span class="sig-name descname"><span class="pre">vuong_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Poisson</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NegativeBinomial</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">ZeroInflatedPoisson</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ZeroInflatedNegativeBinomialP</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.vuong_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module to perform Vuong test for identification of zero inflation in count data regression models.</p>
+<p>The new Python command vuong_test of the package statstests.tests reports the results of the Voung test.</p>
+<p>The Vuong statistical test specifies that the Vuong (1989) test of ZIP or ZINB versus Poisson or negative binomial, 
+respectively, be reported. This test statistic has a standard normal distribution with large values favoring 
+ZIP or ZINB models over Poisson or negative binomial regression models, respectively.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="gp">In [3]: </span><span class="kn">from</span> <span class="nn">statstests.datasets</span> <span class="kn">import</span> <span class="n">corruption</span>
+
+<span class="gp">In [4]: </span><span class="kn">from</span> <span class="nn">statstests.tests</span> <span class="kn">import</span> <span class="n">vuong_test</span>
+
+<span class="gp">In [5]: </span><span class="kn">from</span> <span class="nn">statsmodels.discrete.count_model</span> <span class="kn">import</span> <span class="n">ZeroInflatedNegativeBinomialP</span><span class="p">,</span> <span class="n">ZeroInflatedPoisson</span>
+
+<span class="gp">In [6]: </span><span class="kn">from</span> <span class="nn">statsmodels.discrete.discrete_model</span> <span class="kn">import</span> <span class="n">Poisson</span><span class="p">,</span> <span class="n">NegativeBinomial</span>
+
+<span class="gp">In [7]: </span><span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="gp">In [8]: </span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+
+<span class="go"># import corruption dataset</span>
+<span class="gp">In [9]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">corruption</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+
+<span class="go">#Definição da variável dependente (voltando ao dataset 'df_corruption')</span>
+<span class="gp">In [10]: </span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">violations</span>
+
+<span class="go">#Definição das variáveis preditoras que entrarão no componente de contagem</span>
+<span class="gp">In [11]: </span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'staff'</span><span class="p">,</span><span class="s1">'post'</span><span class="p">,</span><span class="s1">'corruption'</span><span class="p">]]</span>
+
+<span class="gp">In [12]: </span><span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="gp">In [13]: </span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'post'</span><span class="p">],</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="gp">In [14]: </span><span class="n">X</span><span class="p">[</span><span class="s2">"post_yes"</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="s2">"post_yes"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"int"</span><span class="p">)</span>
+
+<span class="go"># Estimação do modelo poisson</span>
+<span class="gp">In [15]: </span><span class="n">modelo_poisson</span> <span class="o">=</span> <span class="n">Poisson</span><span class="p">(</span><span class="n">endog</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">exog</span><span class="o">=</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="go">Optimization terminated successfully.</span>
+<span class="go">         Current function value: 6.952328</span>
+<span class="go">         Iterations 9</span>
+
+<span class="go">#Parâmetros do modelo_poisson</span>
+<span class="gp">In [16]: </span><span class="nb">print</span><span class="p">(</span><span class="n">modelo_poisson</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="go">                          Poisson Regression Results                          </span>
+<span class="go">==============================================================================</span>
+<span class="go">Dep. Variable:             violations   No. Observations:                  298</span>
+<span class="go">Model:                        Poisson   Df Residuals:                      294</span>
+<span class="go">Method:                           MLE   Df Model:                            3</span>
+<span class="go">Date:                Mon, 03 Jul 2023   Pseudo R-squ.:                  0.3992</span>
+<span class="go">Time:                        14:09:44   Log-Likelihood:                -2071.8</span>
+<span class="go">converged:                       True   LL-Null:                       -3448.6</span>
+<span class="go">Covariance Type:            nonrobust   LLR p-value:                     0.000</span>
+<span class="go">==============================================================================</span>
+<span class="go">                 coef    std err          z      P&gt;|z|      [0.025      0.975]</span>
+<span class="gt">------------------------------------------------------------------------------</span>
+<span class="n">const</span>          <span class="mf">2.2127</span>      <span class="mf">0.031</span>     <span class="mf">71.134</span>      <span class="mf">0.000</span>       <span class="mf">2.152</span>       <span class="mf">2.274</span>
+<span class="n">staff</span>          <span class="mf">0.0219</span>      <span class="mf">0.001</span>     <span class="mf">17.807</span>      <span class="mf">0.000</span>       <span class="mf">0.019</span>       <span class="mf">0.024</span>
+<span class="n">corruption</span>     <span class="mf">0.3418</span>      <span class="mf">0.027</span>     <span class="mf">12.430</span>      <span class="mf">0.000</span>       <span class="mf">0.288</span>       <span class="mf">0.396</span>
+<span class="n">post_yes</span>      <span class="o">-</span><span class="mf">4.2968</span>      <span class="mf">0.197</span>    <span class="o">-</span><span class="mf">21.762</span>      <span class="mf">0.000</span>      <span class="o">-</span><span class="mf">4.684</span>      <span class="o">-</span><span class="mf">3.910</span>
+<span class="o">==============================================================================</span>
+
+<span class="c1"># Estimação do modelo poisson</span>
+<span class="gp">In [17]: </span><span class="n">modelo_bneg</span> <span class="o">=</span> <span class="n">NegativeBinomial</span><span class="p">(</span><span class="n">endog</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">exog</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">loglike_method</span><span class="o">=</span><span class="s1">'nb2'</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="go">Optimization terminated successfully.</span>
+<span class="go">         Current function value: 1.904031</span>
+<span class="go">         Iterations: 19</span>
+<span class="go">         Function evaluations: 23</span>
+<span class="go">         Gradient evaluations: 23</span>
+
+<span class="go">#Parâmetros do modelo_poisson</span>
+<span class="gp">In [18]: </span><span class="nb">print</span><span class="p">(</span><span class="n">modelo_bneg</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="go">                     NegativeBinomial Regression Results                      </span>
+<span class="go">==============================================================================</span>
+<span class="go">Dep. Variable:             violations   No. Observations:                  298</span>
+<span class="go">Model:               NegativeBinomial   Df Residuals:                      294</span>
+<span class="go">Method:                           MLE   Df Model:                            3</span>
+<span class="go">Date:                Mon, 03 Jul 2023   Pseudo R-squ.:                  0.1549</span>
+<span class="go">Time:                        14:09:44   Log-Likelihood:                -567.40</span>
+<span class="go">converged:                       True   LL-Null:                       -671.37</span>
+<span class="go">Covariance Type:            nonrobust   LLR p-value:                 8.088e-45</span>
+<span class="go">==============================================================================</span>
+<span class="go">                 coef    std err          z      P&gt;|z|      [0.025      0.975]</span>
+<span class="gt">------------------------------------------------------------------------------</span>
+<span class="n">const</span>          <span class="mf">1.9469</span>      <span class="mf">0.205</span>      <span class="mf">9.477</span>      <span class="mf">0.000</span>       <span class="mf">1.544</span>       <span class="mf">2.350</span>
+<span class="n">staff</span>          <span class="mf">0.0400</span>      <span class="mf">0.014</span>      <span class="mf">2.945</span>      <span class="mf">0.003</span>       <span class="mf">0.013</span>       <span class="mf">0.067</span>
+<span class="n">corruption</span>     <span class="mf">0.4527</span>      <span class="mf">0.133</span>      <span class="mf">3.396</span>      <span class="mf">0.001</span>       <span class="mf">0.191</span>       <span class="mf">0.714</span>
+<span class="n">post_yes</span>      <span class="o">-</span><span class="mf">4.2746</span>      <span class="mf">0.266</span>    <span class="o">-</span><span class="mf">16.065</span>      <span class="mf">0.000</span>      <span class="o">-</span><span class="mf">4.796</span>      <span class="o">-</span><span class="mf">3.753</span>
+<span class="n">alpha</span>          <span class="mf">2.0963</span>      <span class="mf">0.243</span>      <span class="mf">8.614</span>      <span class="mf">0.000</span>       <span class="mf">1.619</span>       <span class="mf">2.573</span>
+<span class="o">==============================================================================</span>
+
+<span class="c1">#Definição das variáveis preditoras que entrarão no componente de contagem</span>
+<span class="gp">In [19]: </span><span class="n">x1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'staff'</span><span class="p">,</span><span class="s1">'post'</span><span class="p">,</span><span class="s1">'corruption'</span><span class="p">]]</span>
+
+<span class="gp">In [20]: </span><span class="n">X1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="go">#Definição das variáveis preditoras que entrarão no componente logit (inflate)</span>
+<span class="gp">In [21]: </span><span class="n">x2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'corruption'</span><span class="p">]]</span>
+
+<span class="gp">In [22]: </span><span class="n">X2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+
+<span class="go">#Se estimarmos o modelo sem dummizar as variáveis categórias, o modelo retorna</span>
+<span class="go">#um erro</span>
+<span class="gp">In [23]: </span><span class="n">X1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'post'</span><span class="p">],</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'int'</span><span class="p">)</span>
+
+<span class="go">#Estimação do modelo ZIP pela função 'ZeroInflatedPoisson' do pacote</span>
+<span class="go">#'Statsmodels'</span>
+<span class="go">#Estimação do modelo ZIP</span>
+<span class="go">#O argumento 'exog_infl' corresponde às variáveis que entram no componente</span>
+<span class="go">#logit (inflate)</span>
+<span class="go"># modelo_zip = ZeroInflatedPoisson(y, </span>
+<span class="go">#                                 X1, </span>
+<span class="go">#                                 exog_infl=X2,</span>
+<span class="go">#                                 inflation='logit').fit(maxiter=1000000000)</span>
+<span class="go"># #Parâmetros do modelo</span>
+<span class="go"># print(modelo_zip.summary())</span>
+<span class="go"># vuong_test(modelo_poisson, modelo_zip)</span>
+</pre></div>
+</div>
+</dd></dl>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="tests.overdisp.html" title="tests.overdisp"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> tests.overdisp </span>
+              </div>
+            </a>
+          
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, statstests.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -62,20 +62,10 @@ def stepwise(model, pvalue_limit: float=0.05):
     try:
 
         formula = model.model.data.ynames + " ~ " + \
-            ' + '.join(model.model.data.xnames[1:])
+            ' + '.join(["Q('" + name + "')" for name in  model.model.data.xnames[1:]])
 
         df = pd.concat([model.model.data.orig_endog,
                        model.model.data.orig_exog], axis=1)
-
-        # adjust column names with special characters from categorical columns
-        df.columns = df.columns.str.replace('[', '', regex=True)
-        df.columns = df.columns.str.replace('.', '_', regex=True)
-        df.columns = df.columns.str.replace(']', '', regex=True)
-
-        # adjust formula with special characters from categorical columns
-        formula = formula.replace("[", "")
-        formula = formula.replace('.', "_")
-        formula = formula.replace(']', "")
 
         atributes_discarded = []
 
