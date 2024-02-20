@@ -123,9 +123,9 @@ def overdisp(model, data):
                     model.model.data.orig_exog], axis=1)
 
     # adjust column names with special characters from categorical columns
-    df.columns = df.columns.str.replace('[', '', regex=True)
-    df.columns = df.columns.str.replace('.', '_', regex=True)
-    df.columns = df.columns.str.replace(']', '', regex=True)
+    df.columns = df.columns.str.replace('\[', '', regex=True)
+    df.columns = df.columns.str.replace('\.', '_', regex=True)
+    df.columns = df.columns.str.replace('\]', '', regex=True)
 
     # adjust formula with special characters from categorical columns
     formula = formula.replace("[", "")
