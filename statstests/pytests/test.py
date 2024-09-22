@@ -1,9 +1,10 @@
+import pytest
+import pandas as pd
+
 def test_replace():
     """
-        Teste para validar alteração
-    """
-    import pytest
-    import pandas as pd
+        Test to validate changes
+    """    
     df = pd.DataFrame({'[col.1]': [1, 2], '[col.2]': [3, 4]})
     df.columns = df.columns.str.replace('\[', '', regex=True)
     df.columns = df.columns.str.replace('\.', '_', regex=True)
