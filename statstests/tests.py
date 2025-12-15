@@ -86,80 +86,68 @@ def shapiro_francia(array):
 
     return dic
 
-
-def overdisp(model, data):
+def overdisp(model, data=None):
     """
-    Overdisp test for Statsmodels GLM Poisson model
-
+    Overdispersion test for Statsmodels count models (Cameron & Trivedi, 1990).
     """
 
-    # dictionary that identifies the type of the inputed model
-    models_types = {
-        "<class 'statsmodels.genmod.generalized_linear_model.GLM'>": "GLM"}
+    # 1. Validação e Identificação do Modelo
+    model_class = type(model).__name__
+    supported_classes = ["GLMResultsWrapper", "PoissonResultsWrapper", 
+                         "NegativeBinomialResultsWrapper", "GLM", "Poisson", "NegativeBinomial"]
 
+    # Exceção para modelos não suportados
+    if model_class not in supported_classes:
+        raise ValueError(
+            f"Model type '{model_class}' not supported for overdispersion test. "
+            f"Supported types: {supported_classes}"
+        )
+
+    # Verificação se o modelo foi ajustado
+    if not hasattr(model, 'fittedvalues') or not hasattr(model, 'model'):
+        raise Exception(
+            "The model must be fitted (use .fit() method). "
+            f"Current type: {model_class}"
+        )
+
+    print(f"Estimating overdispersion test for model type: {model_class}...\n")
+
+    # 2. Extração de Dados
     try:
-        # identify model type
-        model_type = models_types[str(type(model.model))]
-    except:
-        raise Exception("The model is not yet supported...",
-                        "Suported types: ", list(models_types.values()))
+        y_obs = np.array(model.model.endog).flatten()
+        y_hat = np.array(model.fittedvalues).flatten()
+    except Exception as e:
+        raise Exception(f"Could not extract data from model. Error: {e}")
+    if len(y_obs) != len(y_hat):
+        raise ValueError("Observed and fitted values have different lengths.")
+    y_hat[y_hat == 0] = 1e-10
 
-    # dictionary that identifies the family type of the inputed glm model
-    glm_families_types = {
-        "<class 'statsmodels.genmod.families.family.Poisson'>": "Poisson"}
+    # 3. Cálculo da variável auxiliar
+    ystar = ((y_obs - y_hat)**2 - y_obs) / y_hat
 
+    # 4. Estimação OLS Auxiliar
     try:
-        # identify family type
-        glm_families_types[str(type(model.family))]
+        modelo_auxiliar = sm.OLS(ystar, y_hat).fit()
+    except Exception as e:
+        print("Error calculating OLS for overdispersion test.")
+        raise e
 
-    except:
-        raise Exception("This family is not supported...",
-                        "Suported types: ", list(glm_families_types.values()))
-
-    formula = model.model.data.ynames + " ~ " + \
-        ' + '.join(model.model.data.xnames[1:])
-
-    df = pd.concat([model.model.data.orig_endog.astype("int"),
-                    model.model.data.orig_exog], axis=1)
-
-    # adjust column names with special characters from categorical columns
-    df.columns = df.columns.str.replace('[', '', regex=True)
-    df.columns = df.columns.str.replace('.', '_', regex=True)
-    df.columns = df.columns.str.replace(']', '', regex=True)
-
-    # adjust formula with special characters from categorical columns
-    formula = formula.replace("[", "")
-    formula = formula.replace('.', "_")
-    formula = formula.replace(']', "")
-
-    print("Estimating model...: \n", model_type)
-
-    df = df.drop(columns=["Intercept"])
-
-    if model_type == "Poisson":
-        model = smf.glm(formula=formula, data=df,
-                        family=sm.families.Poisson()).fit()
-
-    # find lambda
-    df['lmbda'] = model.fittedvalues
-
-    # creating ystar
-    df['ystar'] = (((data[model.model.data.ynames]-df['lmbda'])**2)
-                   - data[model.model.data.ynames])/df['lmbda']
-
-    # ols estimation
-    modelo_auxiliar = sm.OLS.from_formula("ystar ~ 0 + lmbda", df).fit()
-
+    # 5. Exibição dos Resultados
     print(modelo_auxiliar.summary2(), "\n")
+    p_value = modelo_auxiliar.pvalues[0]
+    coef = modelo_auxiliar.params[0]
 
     print("==================Result======================== \n")
-    print(f"p-value: {modelo_auxiliar.pvalues[0]} \n")
+    print(f"p-value: {p_value} \n")
 
-    if modelo_auxiliar.pvalues[0] > 0.05:
+    if p_value > 0.05:
         print("Indicates equidispersion at 95% confidence level")
-    else:
+    elif coef > 0:
         print("Indicates overdispersion at 95% confidence level")
+    else:
+        print("Indicates underdispersion at 95% confidence level")
 
+    return
 
 def vuong_test(m1: Union[Poisson, NegativeBinomial], m2: Union[ZeroInflatedPoisson, ZeroInflatedNegativeBinomialP]):
     """    
