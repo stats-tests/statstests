@@ -115,11 +115,15 @@ def overdisp(model, data=None):
     # 2. Extração de Dados
     try:
         y_obs = np.array(model.model.endog).flatten()
-        y_hat = np.array(model.fittedvalues).flatten()
+        try:
+            y_hat = np.asarray(model.predict()).flatten()
+        except:
+            y_hat = np.asarray(model.fittedvalues).flatten()
     except Exception as e:
         raise Exception(f"Could not extract data from model. Error: {e}")
     if len(y_obs) != len(y_hat):
         raise ValueError("Observed and fitted values have different lengths.")
+    
     y_hat[y_hat == 0] = 1e-10
 
     # 3. Cálculo da variável auxiliar
